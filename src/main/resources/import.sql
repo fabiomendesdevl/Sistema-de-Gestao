@@ -1,0 +1,1 @@
+insert into tb_client (name, email, phone, neighborhood, street, number) values ('Augusto', 'augusto@gmail.com', '35984469990', 'Santa Cruz', 'Elio Garcia Lopes', 150);
