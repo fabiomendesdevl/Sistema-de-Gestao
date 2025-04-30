@@ -4,8 +4,11 @@ package com.pafsistemas.pafsistemas.entities;
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.*;
+import org.aspectj.weaver.ast.Or;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -27,4 +30,12 @@ public class Product implements Serializable {
     private Double price;
     @Column(nullable = false)
     private Integer quantity;
+
+    @ManyToMany
+    private List<Order> orderList = new ArrayList<>();
+
+    public double valorTotal(double total){
+        total += quantity * total;
+        return total;
+    }
 }

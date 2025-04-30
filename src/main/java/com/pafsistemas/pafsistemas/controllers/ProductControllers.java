@@ -11,7 +11,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 
 @RestController
-@RequestMapping(value = "/{id}")
+@RequestMapping(value = "/products")
 public class ProductControllers {
 
     @Autowired

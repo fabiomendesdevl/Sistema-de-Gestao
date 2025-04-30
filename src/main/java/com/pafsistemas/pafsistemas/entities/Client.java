@@ -5,6 +5,8 @@ import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @NoArgsConstructor
@@ -33,4 +35,6 @@ public class Client implements Serializable {
     private String number;
 
     //pedidos lista de pedidos do client One To many
+    @OneToMany
+    private List<Order> orderList = new ArrayList<>();
 }
