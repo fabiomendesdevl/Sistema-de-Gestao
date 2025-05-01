@@ -30,7 +30,7 @@ public class Order {
     private Double total;
 
 
-    @ManyToMany
+    @OneToMany
     private List<Product> productList = new ArrayList<>();
 }
 
