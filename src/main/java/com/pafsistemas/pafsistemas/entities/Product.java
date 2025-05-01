@@ -14,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
-@EqualsAndHashCode
+@EqualsAndHashCode(of = "id")
 @Entity
 @Table(name = "tb_product")
 public class Product implements Serializable {
@@ -33,9 +33,4 @@ public class Product implements Serializable {
 
     @ManyToMany
     private List<Order> orderList = new ArrayList<>();
-
-    public double valorTotal(double total){
-        total += quantity * total;
-        return total;
-    }
 }

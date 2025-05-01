@@ -7,14 +7,13 @@ import lombok.*;
 
 import java.time.Instant;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-@EqualsAndHashCode
+@EqualsAndHashCode(of = "id")
 @Entity
 @Table(name = "tb_order")
 public class Order {
@@ -30,7 +29,8 @@ public class Order {
     private StatusPedido statusPedido;
     private Double total;
 
+
     @ManyToMany
     private List<Product> productList = new ArrayList<>();
-
 }
+
