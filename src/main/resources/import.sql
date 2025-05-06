@@ -5,3 +5,4 @@ INSERT INTO tb_stock (product_id, quantity) VALUES (1, 50);
 INSERT INTO tb_financial (type_Transaction, valor, date_Transaction) VALUES(1, 1500.00, '2020-04-04 14:25:32-03');
 
 
+insert into tb_client (name, email, phone, neighborhood, street, number) values ('Fabio', 'Fabio@gmail.com', '3598446999', 'Cruz', ' Garcia Lopes', 150);

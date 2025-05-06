@@ -1,13 +1,17 @@
 package com.pafsistemas.pafsistemas.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.pafsistemas.pafsistemas.enums.StatusPedido;
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.jpa.repository.Query;
 
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -29,8 +33,8 @@ public class Order {
     private StatusPedido statusPedido;
     private Double total;
 
-
-    @OneToMany
+    @JsonIgnore
+    @ManyToMany(mappedBy = "orderList")
     private List<Product> productList = new ArrayList<>();
 }
 

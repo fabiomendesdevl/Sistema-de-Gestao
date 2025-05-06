@@ -1,5 +1,7 @@
 package com.pafsistemas.pafsistemas.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
@@ -35,6 +37,7 @@ public class Client implements Serializable {
     private String number;
 
     //pedidos lista de pedidos do client One To many
-    @OneToMany
+    @JsonIgnore
+    @OneToMany(mappedBy = "client") // Aponta para o campo 'client' em Order
     private List<Order> orderList = new ArrayList<>();
 }

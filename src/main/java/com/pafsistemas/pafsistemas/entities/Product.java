@@ -32,5 +32,10 @@ public class Product implements Serializable {
     private Integer quantity;
 
     @ManyToMany
+    @JoinTable(name = "tb_order_product",
+            joinColumns = @JoinColumn(name = "product_id"),
+            inverseJoinColumns = @JoinColumn(name = "order_id"))
     private List<Order> orderList = new ArrayList<>();
+
+
 }
